@@ -32,5 +32,4 @@
 /Users/ryandines/DevelopmentCode/workTracker/SeniorDevops/obj/Debug/netcoreapp2.1/SeniorDevops.dll
 /Users/ryandines/DevelopmentCode/workTracker/SeniorDevops/obj/Debug/netcoreapp2.1/SeniorDevops.pdb
 /Users/ryandines/DevelopmentCode/workTracker/SeniorDevops/obj/Debug/netcoreapp2.1/SeniorDevops.csproj.CopyComplete
-/Users/ryandines/DevelopmentCode/workTracker/SeniorDevops/obj/Debug/netcoreapp2.1/SeniorDevops.csprojResolveAssemblyReference.cache
 /Users/ryandines/DevelopmentCode/workTracker/SeniorDevops/obj/Debug/netcoreapp2.1/Razor/Views/Clockin/Index.g.cshtml.cs
