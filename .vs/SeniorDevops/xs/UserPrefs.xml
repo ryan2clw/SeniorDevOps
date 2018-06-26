@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{BAB60727-7A3E-4B9C-9335-B8B79B153289}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Index.cshtml">
+    <Files>
+      <File FileName="Controllers/HomeController.cs" Line="14" Column="10" />
+      <File FileName="Views/Home/Index.cshtml" Line="4" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Shared/_LoginPartial.cshtml" Line="10" Column="32" />
+      <File FileName="Startup.cs" Line="29" Column="10" />
+      <File FileName="Controllers/ClockinController.cs" Line="16" Column="1" />
+      <File FileName="Views/Clockin/Index.cshtml" Line="8" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.SeniorDevops PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
