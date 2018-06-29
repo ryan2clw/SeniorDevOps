@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using SeniorDevops.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace SeniorDevops
 {
@@ -63,7 +64,10 @@ namespace SeniorDevops
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseAuthentication();
 
             app.UseMvc(routes =>
