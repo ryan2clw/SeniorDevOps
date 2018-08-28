@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{BAB60727-7A3E-4B9C-9335-B8B79B153289}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Index.cshtml">
     <Files>
-      <File FileName="Controllers/HomeController.cs" Line="16" Column="10" />
-      <File FileName="Views/Home/Index.cshtml" Line="11" Column="4" />
+      <File FileName="Controllers/HomeController.cs" Line="40" Column="50" />
+      <File FileName="Views/Home/Index.cshtml" Line="112" Column="47" />
       <File FileName="Program.cs" Line="17" Column="1" />
-      <File FileName="Views/Shared/_LoginPartial.cshtml" Line="25" Column="2" />
-      <File FileName="Startup.cs" Line="69" Column="16" />
-      <File FileName="appsettings.json" Line="3" Column="75" />
+      <File FileName="Startup.cs" Line="40" Column="15" />
+      <File FileName="appsettings.json" Line="4" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

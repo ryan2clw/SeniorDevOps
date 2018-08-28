@@ -61,7 +61,7 @@ using SeniorDevops.Models;
             WriteLiteral("  ");
             EndContext();
             BeginContext(49, 44, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed085bfe4670437dbe958e19ce5a5228", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31d63c9e049d4af68caa26d5bd678c5e", async() => {
                 BeginContext(55, 31, true);
                 WriteLiteral("\r\n    <h1>CLOCKIN PAGE</h1>\r\n  ");
                 EndContext();
