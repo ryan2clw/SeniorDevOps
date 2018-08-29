@@ -1,7 +1,119 @@
 ﻿@{ViewData["Title"] = "Clock-In Page";}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stored Procedures</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <style>
+        span.field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>@ViewData["Message"]</h3>
 
-@{
-  <body>
-    <h1>CLOCKIN PAGE</h1>
-  </body>
+    <p>Populate the user data here.</p>
+    <div style="width:90%; margin:0 auto" class="tablecontainer">
+        <a class="popup btn btn-primary" href="/Home/Save/0/" style="margin-bottom:20px; margin-top:20px;">Add New Employer</a>
+        <table id="myDatatable">
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                    <th>Status</th>
+                    <th>Contact</th>
+                    <th>Phone</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>
+
+@section Scripts{
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js" integrity="sha256-zkVFxDCBA0K+Fl6QZDRpD0G+GQ+TfuGv7xXkIAM69h8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script>
+$('#myDatatable').DataTable({
+        "ajax": {
+            "url": '/api/Employer',
+            "type": "get",
+            "datatype": "json",
+            "dataSrc": '',
+            "crossDomain": "true"
+        },
+        "columns": [
+            { data: 'company_name' },
+            { data: 'position' },
+            { data: 'salary' },
+            { data: 'status' },
+            { data: 'contact' },
+            { data: 'phone' },
+            {
+                "data": "employee_id", "width": "50px", "render": function(data) {
+                    return '<a class="popup btn btn-primary" href="/Clockin/Save/' + data + '">Edit</a>';
+                }
+            },
+            {
+                "data": "EmployeeID", "width": "50px", "render": function(data) {
+                    return '<a class="popup btn btn-primary" href="/Clockin/Delete/' + data + '">Delete</a>';
+                }
+            }]
+});
+$(document).ready(function() {
+        $('.tablecontainer').on('click', 'a.popup', function(e) {
+            e.preventDefault();
+            var $pageContent = $('<div/>');
+
+            $pageContent.load($(this).attr('href'), function() {
+                $('#popupForm', $pageContent).removeData('validator');
+                $('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+            });
+
+            $dialog = $('<div class="popupWindow" style="overflow:auto; background-color:#5185FF"></div>')
+                .html($pageContent)
+                .dialog({
+                    draggable: false,
+                    autoOpen: false,
+                    resizable: false,
+                    model: true,
+                    title: 'Popup Dialog',
+                    height: 550,
+                    width: 600,
+                    close: function() {
+                        $dialog.dialog('destroy').remove();
+                    }
+                })
+
+            $('.popupWindow').on('submit', '#popupForm', function(e) {
+                var url = $('#popupForm')[0].action;
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $('#popupForm').serialize(),
+                    success: function(data) {
+                        if (data.status) {
+                            $dialog.dialog('close');
+                            $('#myDatatable').DataTable.ajax.reload();
+                        }
+                    }
+                })
+
+                e.preventDefault();
+            })
+            $dialog.dialog('open');
+        })
+});</script>
 }
+
