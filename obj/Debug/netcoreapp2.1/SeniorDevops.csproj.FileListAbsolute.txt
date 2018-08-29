@@ -104,4 +104,4 @@
 /Users/ryandines/Projects/SeniorDevOps/obj/Debug/netcoreapp2.1/SeniorDevops.dll
 /Users/ryandines/Projects/SeniorDevOps/obj/Debug/netcoreapp2.1/SeniorDevops.pdb
 /Users/ryandines/Projects/SeniorDevOps/obj/Debug/netcoreapp2.1/SeniorDevops.csproj.CopyComplete
-/Users/ryandines/Projects/SeniorDevOps/obj/Debug/netcoreapp2.1/SeniorDevops.csprojResolveAssemblyReference.cache
+/Users/ryandines/Projects/SeniorDevOps/obj/Debug/netcoreapp2.1/SeniorDevops.csprojAssemblyReference.cache
